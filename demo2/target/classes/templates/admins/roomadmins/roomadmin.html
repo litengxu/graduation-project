@@ -1,0 +1,311 @@
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+&lt;!&ndash;<head th:replace="~{fragments/header :: header}">&ndash;&gt;
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+
+        <h2 th:text="${title}">Welcome
+            to waylau.com</h2>
+        <h1 th:text="${userList.size()}"></h1>
+    </div>&lt;!&ndash; /.row &ndash;&gt;
+
+    <div class="row">
+        <p>
+            <a class="btn btn-primary" href="/users/form.html" role="button">创建用户</a>
+        </p>
+    </div>&lt;!&ndash; /.row &ndash;&gt;
+
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <td>ID</td>
+                <td>Age</td>
+                <td>Name</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${userList.size()} eq 0">
+                <td colspan="3">没有用户信息！！</td>
+            </tr>
+            <tr th:each="user ,iterStat: ${userList}">
+                <td th:text="${user.id}">1</td>
+
+                <td><a href="view.html" th:href="@{'/users/' + ${user.id}}" th:text="${user.username}"></a></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>&lt;!&ndash; /.row &ndash;&gt;
+</div>&lt;!&ndash; /.container &ndash;&gt;
+
+&lt;!&ndash;<div th:replace="~{fragments/footer :: footer}">...</div>&ndash;&gt;
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Hotel后台管理</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+<body class="layui-layout-body">
+
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+           <!-- <li class="layui-nav-item"><a href="">控制台</a></li>
+            <li class="layui-nav-item"><a href="">商品管理</a></li>-->
+            <li class="layui-nav-item"><a href="/users/admin">用户</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="/adminsmes/mes">
+                    <img th:src="${session.user.getIcon()}" class="layui-nav-img"> 管理
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="/adminsmes/mes">基本资料</a></dd>
+                    <dd><a href="/con/delCookie">安全退出</a></dd>
+                </dl>
+            </li>,
+            <li class="layui-nav-item"><a href=""></a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <!--<a class="" href="javascript:;">所有商品</a>-->
+                    <!--<dl class="layui-nav-child">-->
+                    <!--<dd><a href="/users/admin">列表一</a></dd>-->
+                    <!--<dd><a href="javascript:;">列表二</a></dd>-->
+                    <!--<dd><a href="javascript:;">列表三</a></dd>-->
+                    <!--<dd><a href="">超链接</a></dd>-->
+                    <!--</dl>-->
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/roomadmins/roomadmin">住房管理</a>
+
+                </li>
+                <li class="layui-nav-item"><a href="/users/admin">住客信息</a></li>
+                <li class="layui-nav-item"><a href="/room/list">房间信息</a></li>
+                <li class="layui-nav-item"><a href="/reserveroom/reserve">预订房间</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 3px;">
+
+            <!--<div class="container">
+                <div class="row">
+
+                    <h2 th:text="${title}"></h2>
+                    <tr th:if="${roomadminlist.size()} eq 0">
+                        <td colspan="3">没有用户信息！！</td>
+                    </tr>
+                </div>
+
+
+
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>用户名</td>
+                            <td>身份证号</td>
+                            <td>房间类型</td>
+                            <td>入住时间</td>
+                            <td>预计离开时间</td>
+                            <td>实际离开时间</td>
+                            <td>金额</td>
+                        </tr>
+                        </thead>
+                        <</tr>>
+                        <tr th:if="${roomadminlist.size()} eq 0">
+                            <td colspan="3">没有用户信息！！</td>
+                        </tr>
+                        <tr th:each="user ,iterStat: ${roomadminlist}">
+                            <td th:text="${user.id}"></td>
+                            <td th:text="${user.username}"></td>
+
+                            <td th:text="${user.card}"></td>
+                            <td th:text="${user.type}"></td>
+                            <td th:text="${user.inday}"></td>
+                            <td th:text="${user.outday}"></td>
+                            <td th:text="${user.soutday}"></td>
+                            <td th:text="${user.money}"></td>
+                            &lt;!&ndash;<td><a href="view.html" th:href="@{'/users/' + ${user.id}}" th:text="${user.username}"></a></td>&ndash;&gt;
+                            <td><a th:href="@{'/roomadmins/delete/' + ${user.username}}">退房</a></td>
+                            <td><a th:href="@{'/roomadmins/modify/' + ${user.id}}">修改</a></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>-->
+          <!--  <div class="layui-btn-group demoTable">
+                <a  th:href="@{'/room/add'}"><button class="layui-btn" data-type="getCheckData" >添加</button></a>
+                &lt;!&ndash;  <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
+                  <button class="layui-btn" data-type="isAll">验证是否全选</button>&ndash;&gt;
+            </div>-->
+            <div class="demoTable">
+
+                搜索用户：
+                <form action="/roomadmins/roomadmin" method="post">
+                    <div class="layui-inline">
+
+                            <input class="layui-input" name="username" id="demoReload" placeholder="Username" autocomplete="off">
+
+
+                    </div>
+                    <button class="layui-btn" data-type="reload" type="submit">搜索</button>
+                </form>
+            </div>
+            <table class="layui-table" lay-data="{width: 1130, height:480, url:'/roomadmins/list2/', page:true, id:'idTest'}" lay-filter="demo">
+                <thead>
+                <tr>
+                    <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
+                    <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
+                    <th lay-data="{field:'username', width:80}">用户名</th>
+                    <th lay-data="{field:'card', width:80,sort:true}">证件号</th>
+                    <th lay-data="{field:'type', width:80}" >类型</th>
+                    <th lay-data="{field:'inday', width:160,sort:true}" th:formtarget="yyyy-mm-dd">入住时间</th>
+                    <th lay-data="{field:'outday', width:160,sort:true}">离开时间</th>
+                    <th lay-data="{field:'soutday', width:160,sort:true}">实际离开时间</th>
+                    <th lay-data="{field:'money', width:160,sort:true}">金额</th>
+                    <th lay-data="{field:'roomid', width:160,sort:true}">入住房间号</th>
+                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
+                </tr>
+                </thead>
+            </table>
+
+
+
+
+
+        </div>
+          <!--  <form action="/roomadmins/selectroomadmin" method="post">
+                用户名：<input type="text" id="username"  name="username"  placeholder="Username" required/>
+                <input type="submit" onClick="myFunction()" value="查询">
+            </form>-->
+
+
+
+
+
+        </div>
+        <input id="size" th:value="${userList1.size()}" type="hidden"/>
+        <script>
+                var c=$('#size').val();
+
+                if(c==0)
+                {
+
+                    alert("用户不存在");
+                }
+        </script>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        ©后台管理-By:litengxu
+
+    </div>
+
+</div>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script src="/layui/layui.js"></script>
+<script type="text/html" id="barDemo">
+
+    <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">退房</a>
+</script>
+
+
+<script src="/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+        //监听表格复选框选择
+        table.on('checkbox(demo)', function(obj){
+            console.log(obj)
+        });
+        //监听工具条
+        table.on('tool(demo)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){
+
+               // layer.msg('ID：'+ data.id + ' 的查看操作');
+            } else if(obj.event === 'del'){
+                layer.confirm('真的退房么', function(index){
+                    window.location.href='/roomadmins/delete/' + data.id +"&"+ data.username;
+                    obj.del();
+                    layer.close(index);
+                });
+            } else if(obj.event === 'edit'){
+                window.location.href='/roomadmins/modify/' + data.id;
+              //  layer.alert('编辑行：<br>'+ JSON.stringify(data))
+            }
+        });
+
+        var $ = layui.$, active = {
+            getCheckData: function(){ //获取选中数据
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                layer.alert(JSON.stringify(data));
+            }
+            ,getCheckLength: function(){ //获取选中数目
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                layer.msg('选中了：'+ data.length + ' 个');
+            }
+            ,isAll: function(){ //验证是否全选
+                var checkStatus = table.checkStatus('idTest');
+                layer.msg(checkStatus.isAll ? '全选': '未全选')
+            }
+        };
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>
+</html>
