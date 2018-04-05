@@ -1,0 +1,102 @@
+.sea-content-1{
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 280px;
+	height: 80px;
+}
+#sea-right-21font{
+	float: left;
+	margin-top: 10px;
+	font-size: 15px;
+}
+#sea-right-21font2{
+	float: left;
+	margin-top: 10px;
+	font-size: 15px;
+}
+#sea-right-21font3{
+	 float: left;
+	 margin-top: 10px;
+	 font-size: 15px;
+ }
+#sea-right-21font4{
+	float: left;
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+#sea-right-22input{
+	float: left;
+	width: 180px;
+	height: 30px;
+}
+#sea-right-22input3{
+	float: left;
+	width: 180px;
+	height: 30px;
+}
+.sea-content-21{
+	float: left;
+	
+	width: 25%;
+	height: 280px;
+}
+#sea-content-3font{
+	float: left;
+	margin-left: 15px;
+	font-weight: 700 !important;
+    margin-bottom: 0px !important;
+    font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 28px !important;
+    line-height: 32px !important;
+    letter-spacing: -0.6px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    color: #484848 !important;
+    width: 1100px;
+}
+#sea-content-3font2{
+	float: left;
+	margin-left: 15px;
+	margin-top: 10px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 17px !important;
+    line-height: 24px !important;
+    letter-spacing: 0.2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #484848 !important;
+    font-weight: 300 !important;
+    margin-top: 0px !important;
+    width: 1100px;
+}
+h4, .h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.sea-content-31{
+	float: left;
+	margin-top: 20px;
+	
+	width: 50%;
+	height:350px;
+}
+#sea-right-22input2{
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 180px;
+	height: 35px;
+}
+#sea-right-22input22{
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 180px;
+	height: 35px;
+}
+.layui-btn-normalsea{
+	margin-left: 20px;
+	margin-top: 20px;
+}

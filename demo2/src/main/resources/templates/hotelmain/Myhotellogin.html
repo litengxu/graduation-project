@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="/laydate/laydate.js"></script>
+		<script src="/layer/layer.js"></script>
+		<script src="/layui/layui.js"></script>
+		<script src="/js/lunbo.js"></script>
+		<script src="/js/title.js"></script>
+		
+
+		 <link rel="stylesheet" href="/layui/css/layui.css"  media="all">
+		 <link rel="stylesheet" href="/css/style1.css" />
+	</head>
+	<body>
+			 
+		<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+			
+		  <ul class="layui-tab-title">
+		  	<div class="title-left">
+		  		<img src="/images/timg.jpg" href="Myhotel.html" height="34x" />
+		  		
+		  	</div>
+		  	<div class="title-right">	
+			    <li class="layui-this">Myhotel</li>
+			    <li>主页</li>
+			    <li>投诉建议</li>
+                <li><a th:href="@{'/quser/xiugai/' + ${session.username}}"> <img th:src="${session.user.getIcon()}" href="@{'/quser/xiugai/' + ${session.username}}"height="30px" width="50px"></img></a></li>
+
+			    <li><a th:href="@{'/quser/xiugai/' + ${session.username}}"><td th:text="${session.username}"></td></a></li>
+			   <!-- <li><a href="register.html">注册</a></li>-->
+		    </div>
+		  </ul>
+		  <div class="layui-tab-content" style="height: 100px;">
+			    <div class="layui-tab-item layui-show">
+			    	<div class="main-front">
+			    		<a id="myhotel">MyHotel</a>
+			    	</br>
+			    		<a id="ziti">给你最好的住宿体验</a>
+			    	</div>
+			    	
+			    </div>
+		        <form action="/qsea/search">
+				    <div class="main-next">
+				    	<div class="main-next-1">
+				    		<div class="main-next-11">
+				    			<a id="main-next-11front">时间</a>
+				    		</div>
+							<input name="username" type="hidden"th:value="${session.username}">
+				    		<div class="main-next-12">
+				    			<input name="inday" id="main-next-21input"placeholder="入住时期" type="text"/>
+				    		</div>
+				    	</div>
+				    	<div class="main-next-2">
+				    		<div class="main-next-11">
+				    			<a id="main-next-11front2">时间</a>
+				    		</div>
+				    		<div class="main-next-12">
+				    			<input name="outday"id="main-next-21input2"placeholder="退房时期" type="text"/>
+				    		</div>
+				    	</div>
+				    	<div class="main-next-3">
+				    		<div class="main-next-11">
+				    			<a id="main-next-11front3">房客</a>
+				    		</div>
+				    		<div class="main-next-12">
+				    			<!--//<input id="main-next-11input"placeholder="入住人数" />-->
+				    			<select name="number" id="main-next-11input" lay-verify="">
+								  <option value="">请选择入住人数</option>
+								  <option value="010">1位</option>
+								  <option value="021">2位</option>
+								  <option value="0571">3位</option>
+								</select>
+								
+								<button type="submit" class="layui-btn layui-btn-normal">搜索订房</button>
+								
+				    		</div>
+				    		
+				    	</div>
+				    	
+				    	
+				    </div>
+			    </form>
+			            <div class="lunbo">
+				    		<div class="layui-carousel" id="test1" lay-filter="test1">
+							  <div carousel-item="">
+							    <div><img src="/images/1.jpg"></div>
+							    <div><img src="/images/2.jpg"></div>
+							    <div><img src="/images/3.jpg"></div>
+							    <div><img src="/images/4.jpg"></div>
+							    <div>条目5</div>
+							  </div>
+							</div> 
+				    	</div>
+				    	
+				<div class="come">    		
+				   	<a id="come-font-1">探索MyHotel</a>
+				</div>	    	
+				<div class="come-list">
+				    <a href="#">
+					    <div class="come-list-1" >
+					    	<div class="come-list-pace">
+						    	<div class="come-list-11">
+						    		<img src="/images/sheshi.jpg" height="72px"width="96px">
+						    	</div>
+						    	<div class="come-list-12">
+						    		<a id="come-list-12font">设施</a>
+						    	</div>
+					    	</div>
+					    </div>	
+					</a>
+					<a href="#">
+					    <div class="come-list-2">
+					    	<div class="come-list-pace">
+						    	<div class="come-list-11">
+						    		<img src="/images/tiyan.jpg" height="72px"width="96px">
+						    	</div>
+						    	<div class="come-list-12">
+						    		<a id="come-list-12font2">体验</a>
+						    	</div>
+					    	</div>
+					    </div>
+				    </a>
+				    <a href="#">
+					    <div class="come-list-3">
+					    	<div class="come-list-pace">
+						    	<div class="come-list-11">
+						    		<img src="/images/zhoubian.jpg" height="72px"width="96px">
+						    	</div>
+						    	<div class="come-list-12">
+						    		<a id="come-list-12font3">周边</a>
+						    	</div>
+					    	</div>
+					    </div>
+				    </a>
+				    		
+				</div>
+			<div class="come-2">    		
+				   	<a id="come-font-12">热门目的地</a>
+			</div>	
+			<div class="room-list">
+				<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+				  <ul class="layui-tab-title">
+				    <li class="layui-this">烟台</li>
+				    <li>北京</li>
+				    <li>上海</li>
+				    <li>深圳</li>
+				    <li>广州</li>
+				  </ul>	
+				  <div class="layui-tab-content" style="height: 600px;">
+				    <div class="layui-tab-item layui-show">
+				    	<div class="div-list">
+							<tr th:each="rooms,userStat:${session.roomlist}">
+				    		<div class="div-list-1">
+				    			<a href="room1.html" ><img th:src="${rooms.img}" width="333px"height="200px"/></a>
+				    			<a id="div-list-1font">价格：<td th:text="${rooms.price}"></td> </a>
+				    		
+				    			<button  id="div-list-btn" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn2" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type1">房间类型<td th:text="${rooms.type}"></td> </a>
+				    		</div>
+							</tr>
+				    	<!--	<div class="div-list-1">
+				    			<img src="/images/1.jpg" width="333px"height="200px"/>
+				    			<a id="div-list-1font2">价格：</a>
+				    		
+				    			<button  id="div-list-btn3" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn4" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type12">房间类型</a>
+				    		</div>
+				    		<div class="div-list-1">
+				    			<img src="/images/1.jpg" width="333px"height="200px"/>
+				    			<a id="div-list-1font3">价格：</a>
+				    		
+				    			<button  id="div-list-btn5" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn6" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type13">房间类型</a>
+				    		</div>
+				    			<div class="div-list-1">
+				    			<img src="/images/1.jpg" width="333px"height="200px"/>
+				    			<a id="div-list-1font4">价格：</a>
+				    		
+				    			<button  id="div-list-btn7" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn8" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type14">房间类型</a>
+				    		</div>
+				    			<div class="div-list-1">
+				    			<img src="/images/1.jpg" width="333px"height="200px"/>
+				    			<a id="div-list-1font5">价格：</a>
+				    		
+				    			<button  id="div-list-btn9" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn10" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type15">房间类型</a>
+				    		</div>
+				    			<div class="div-list-1">
+				    			<img src="/images/1.jpg" width="333px"height="200px"/>
+				    			<a id="div-list-1font6">价格：</a>
+				    		
+				    			<button  id="div-list-btn11" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn12" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type16">房间类型</a>
+				    		</div>-->
+				    
+				    		
+				    	</div>
+				    	<div class="fengexian">
+				    		<hr class="layui-bg-gray">	
+				    	</div>
+				    	<div class="last">
+				    		<div class="last-1">
+				    			<a id="last-1-font1">加入
+				    			<br/>
+				    			 
+				    			</a> 
+				    			<a id="last-1-font2">MyHotel</a> 
+				    			
+				    			
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>MyHotel</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>工作机会</span>
+				    				<br />
+				    				<br />
+				    				<span>新闻</span>
+				    				<br />
+				    				<br />
+				    				<span>政策</span>
+				    				<br />
+				    				<br />
+				    				<span>帮助</span>
+				    				<br />
+				    				<br />	
+				    				<span>多元化与归属感</span>
+				    			</div>
+				    			
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>发现</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>信任与安全</span>
+				    				<br />
+				    				<br />
+				    				<span>旅行基金</span>
+				    				<br />
+				    				<br />
+				    				<span>礼品卡</span>
+				    				<br />
+				    				<br />
+				    				<span>MyHotel公民</span>
+				    				<br />
+				    				<br />	
+				    				<span>商务差旅</span>
+				    				<br />
+				    				<br />	
+				    				<span>旅行指南</span>
+				    			</div>
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>出租</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>为什么要出租</span>
+				    				<br />
+				    				<br />
+				    				<span>待客之道</span>
+				    				<br />
+				    				<br />
+				    				<span>房东义务</span>
+				    					
+				    			</div>
+				    		</div>
+				    	</div>
+				    	<hr class="layui-bg-gray">
+				    	<div class="di">
+				    		<div class="di-left">
+						  		<img src="/images/timg.jpg" href="Myhotel.html" height="34x" />
+						  		<a id="di-left-font">
+						  			MyHotel.By.Litengxu
+						  		</a>
+						  	</div>
+						  	<div class="di-right">
+						  		<a id="di-right-font">
+						  			条款
+						  			隐私
+						  			网站地图
+						  		</a>
+						  		
+						  	</div>
+				    	</div>
+				    </div>
+				    <div class="layui-tab-item">内容2</div>
+				    <div class="layui-tab-item">内容3</div>
+				    <div class="layui-tab-item">内容4</div>
+				    <div class="layui-tab-item">内容5</div>
+				  </div>
+				</div> 
+				
+			</div>
+			
+			
+		   </div>
+		    
+		    <div class="layui-tab-item">内容2</div>
+		    <div class="layui-tab-item">内容3</div>
+		    <div class="layui-tab-item">内容4</div>
+		    <div class="layui-tab-item">内容5</div>
+		  </div>
+		  
+</div> 
+	</body>
+	<script type="text/javascript">
+        laydate.render({
+            elem: '#main-next-21input'
+        });
+        laydate.render({
+            elem: '#main-next-21input2'
+        });
+	</script>
+	<script>
+       /* $(function(){
+            $.post("/room/list",{},function (data) {
+
+                for(var i=0;i<data.length;i++){
+                    alert(data[i].id);
+                    alert(data[i].type);
+                }
+            });
+        });*/
+		$("#login").click(function(event) {
+			layer.open({
+				  type: 2,
+				  //title: false,
+				  closeBtn: 0, //不显示关闭按钮
+				  shade: [0],
+				  area: ['0px', '0px'],
+				 // offset: 'rb', //右下角弹出
+				  time: 1, //2秒后自动关闭
+				  anim: 2,
+				  content: ['test/guodu.html', 'no'], //iframe的url，no代表不显示滚动条
+				  end: function(){ //此处用于演示
+				    layer.open({
+				      type: 2,
+				      title: '登录',
+				      shadeClose: true,
+				      shade: false,
+				      maxmin: true, //开启最大化最小化按钮
+				      area: ['500px', '700px'],
+				      content: 'http://127.0.0.1:8020/hotelmain/login.html'
+				    });
+				  }
+				});
+ 			});
+
+	</script>
+</html>

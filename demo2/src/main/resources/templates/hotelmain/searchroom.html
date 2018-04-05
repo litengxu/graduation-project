@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索房间</title>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="/laydate/laydate.js"></script>
+		<script src="/layer/layer.js"></script>
+		<script src="/layui/layui.js"></script>
+		<script src="/js/lunbo.js"></script>
+		<script src="/js/title.js"></script>
+
+    	
+		 <link rel="stylesheet" href="/layui/css/layui.css"  media="all">
+		 <link rel="stylesheet" href="/css/style1.css" />
+		 <link rel="stylesheet" href="/css/sea-style.css" />
+	</head>
+	<body>
+		<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+			  <ul class="layui-tab-title">
+			  	<div class="title-left">
+		  			<img src="/images/timg.jpg" href="Myhotel.html" height="34x" />
+		  		
+		  		</div>
+			    <div class="title-right">	
+				    <li class="layui-this">搜索房间</li>
+				    <li>主页</li>
+				    <li>投诉建议</li>
+					<li><a  href="login.html"><td th:text="${session.username}"></td></a></li>
+		    	</div>
+			  </ul>
+			  <div class="layui-tab-content" style="height: 100px;">
+			    <div class="layui-tab-item layui-show">
+			    	
+					<form action="">
+						<div class="sea-content-1">
+							<div class="room1-right-21">
+								<a id="sea-right-21font">时间</a>
+							</div>
+							<div class="room1-right-22">
+								<input name="inday" id="sea-right-22input"placeholder="入住时期" type="text" th:value="${inday}"/>
+							</div>
+						</div>
+						<div class="sea-content-1">
+							<div class="room1-right-21">
+								<a id="sea-right-21font2">时间</a>
+							</div>
+							<div class="room1-right-22">
+								<input name="outday" id="sea-right-22input3"placeholder="退房时期" type="text"th:value="${outday}"/>
+							</div>
+						</div>
+						<div class="sea-content-1">
+								    			<div class="room1-right-21">
+									    			<a id="sea-right-21font4">房客</a>
+									    		</div>
+					    			<!--//<input id="main-next-11input"placeholder="入住人数" />-->
+								    			<select name="number" id="sea-right-22input2" lay-verify=""th:value="${number}"/>
+												  <option value="">请选择入住人数</option>
+												  <option value="010">1位</option>
+												  <option value="021">2位</option>
+												  <option value="0571">3位</option>
+												</select>
+												
+								    		</div>
+						<div class="sea-content-1">
+								    			<div class="room1-right-21">
+									    			<a id="sea-right-21font3">住房类型</a>
+									    		</div>
+					    			<!--//<input id="main-next-11input"placeholder="入住人数" />-->
+								    			<select name="type" id="sea-right-22input22" lay-verify="">
+												  <option value="">请选择入住房间</option>
+												  <option value="010">单人间</option>
+												  <option value="021">双人间</option>
+												  <option value="0571">大床房</option>
+												</select>
+												
+								    		</div>	
+						<button type="submit" class="layui-btn layui-btn-normalsea">搜索订房</button>		    		
+						<hr class="layui-bg-gray">
+						
+					</form>
+					</div>
+					<div class="sea-content-2">
+						<div class="sea-content-21">
+				    			<a href="room1.html" ><img src="/images/1.jpg" width="310px"height="200px"/></a>
+				    			<a id="div-list-1font">价格：</a>
+				    		
+				    			<button  id="div-list-btn" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn2" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type1">房间类型</a>
+				    	</div>
+				    	<div class="sea-content-21">
+				    			<a href="room1.html" ><img src="/images/1.jpg" width="310px"height="200px"/></a>
+				    			<a id="div-list-1font2">价格：</a>
+				    		
+				    			<button  id="div-list-btn3" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn4" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type12">房间类型</a>
+				    		</div>
+				    		<div class="sea-content-21">
+				    			<a href="room1.html" ><img src="/images/1.jpg" width="310px"height="200px"/></a>
+				    			<a id="div-list-1font3">价格：</a>
+				    		
+				    			<button  id="div-list-btn5" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn6" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type13">房间类型</a>
+				    		</div>
+				    		<div class="sea-content-21">
+				    			<a href="room1.html" ><img src="/images/1.jpg" width="310px"height="200px"/></a>
+				    			<a id="div-list-1font4">价格：</a>
+				    		
+				    			<button  id="div-list-btn7" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn8" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type14">房间类型</a>
+				    		</div>
+
+					
+					<hr class="layui-bg-gray">
+					<div class="sea-content-3">
+						<a id="sea-content-3font">
+							让您能够充分享受旅行的乐趣
+						</a>
+						<a id="sea-content-3font2">
+							拥有您所需要的所有出行便利设施
+						</a>
+						<div class="sea-content-31">
+				    			<a href="room1.html" ><img src="/images/1.jpg" width="645px"height="300px"/></a>
+				    			<a id="div-list-1font5">价格：</a>
+				    		
+				    			<button  id="div-list-btn9" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn10" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type15">房间类型</a>
+				    	</div>
+				    	<div class="sea-content-31">
+				    			<a href="room1.html" ><img src="/images/1.jpg" width="645px"height="300px"/></a>
+				    			<a id="div-list-1font6">价格：</a>
+				    		
+				    			<button  id="div-list-btn11" class=" layui-btn layui-btn-sm layui-btn-primary"  style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe6c6;</i>
+								</button>
+								<button id="div-list-btn12" class="layui-btn layui-btn-sm layui-btn-primary" style=" color: #1E9FFF;">
+								  <i class="layui-icon">&#xe641;</i>
+								</button>
+								<a id="div-list-type16">房间类型</a>
+				    	</div>
+					</div>
+					<hr class="layui-bg-gray">
+						<div class="last">
+				    		<div class="last-1">
+				    			<a id="last-1-font1">加入
+				    			<br/>
+				    			 
+				    			</a> 
+				    			<a id="last-1-font2">MyHotel</a> 
+				    			
+				    			
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>MyHotel</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>工作机会</span>
+				    				<br />
+				    				<br />
+				    				<span>新闻</span>
+				    				<br />
+				    				<br />
+				    				<span>政策</span>
+				    				<br />
+				    				<br />
+				    				<span>帮助</span>
+				    				<br />
+				    				<br />	
+				    				<span>多元化与归属感</span>
+				    			</div>
+				    			
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>发现</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>信任与安全</span>
+				    				<br />
+				    				<br />
+				    				<span>旅行基金</span>
+				    				<br />
+				    				<br />
+				    				<span>礼品卡</span>
+				    				<br />
+				    				<br />
+				    				<span>MyHotel公民</span>
+				    				<br />
+				    				<br />	
+				    				<span>商务差旅</span>
+				    				<br />
+				    				<br />	
+				    				<span>旅行指南</span>
+				    			</div>
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>出租</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>为什么要出租</span>
+				    				<br />
+				    				<br />
+				    				<span>待客之道</span>
+				    				<br />
+				    				<br />
+				    				<span>房东义务</span>
+				    					
+				    			</div>
+				    		</div>
+				    	</div>
+				    	<hr class="layui-bg-gray">
+				    	<div class="di">
+				    		<div class="di-left">
+						  		<img src="/images/timg.jpg" href="Myhotel.html" height="34x" />
+						  		<a id="di-left-font">
+						  			MyHotel.By.Litengxu
+						  		</a>
+						  	</div>
+						  	<div class="di-right">
+						  		<a id="di-right-font">
+						  			条款
+						  			隐私
+						  			网站地图
+						  		</a>
+						  		
+						  	</div>
+				    	</div>
+			    </div>
+			    <div class="layui-tab-item">内容2</div>
+			    <div class="layui-tab-item">内容3</div>
+			    <div class="layui-tab-item">内容4</div>
+			    <div class="layui-tab-item">内容5</div>
+			  </div>
+		</div> 
+	</body>
+	<script type="text/javascript">
+        laydate.render({
+            elem: '#sea-right-22input'
+        });
+        laydate.render({
+            elem: '#sea-right-22input3'
+        });
+	</script>
+	<script>
+            //调用示例
+			layer.photos({
+			  photos: '#layer-photos-demo'
+			  ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+			}); 
+	</script>	
+</html>

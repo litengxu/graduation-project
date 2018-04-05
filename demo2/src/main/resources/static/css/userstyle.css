@@ -1,0 +1,81 @@
+.user-left{
+	width: 35%;
+	height: 800px;
+	float: left;
+	 
+}
+.user-right{
+	width: 65%;
+	float: left;
+	height: 800px;
+	 
+}
+#user-left1{
+	float: left;
+	margin-top: 60px;
+	margin-left: 160px;
+	text-decoration: none;
+    color: #484848;
+    font-weight: bold;
+    font-size: 18px;
+    width: 280px;
+}
+#user-left2{
+	float: left;
+	margin-top: 5px;
+	margin-left: 160px;
+	
+    display: block;
+
+    font-size: 16px;
+    color: #767676;
+   width: 280px;
+}
+#user-left3{
+	float: left;
+	margin-top: 5px;
+	margin-left: 160px;
+	
+    display: block;
+
+    font-size: 16px;
+    color: #767676;
+   width: 280px;
+}
+#user-left4{
+	float: left;
+	margin-top: 5px;
+	margin-left: 160px;
+	
+    display: block;
+
+    font-size: 16px;
+    color: #767676;
+   width: 280px;
+}
+
+
+.center{
+	float: left;
+	margin-left: 0px;
+}
+.left-form{
+	margin-left: 90px;
+}
+#username{
+	
+	width:400px;
+	}
+#password{
+	width: 400px;
+}
+#card{
+	width: 400px;
+}
+#sex{
+	width: 400px;
+}
+#phone{
+	width: 400px;
+}
+

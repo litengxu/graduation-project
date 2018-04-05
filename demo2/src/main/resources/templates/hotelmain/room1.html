@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>房间信息</title>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="/laydate/laydate.js"></script>
+		<script src="/layer/layer.js"></script>
+		<script src="/layui/layui.js"></script>
+		<script src="/js/lunbo.js"></script>
+		<script src="/js/title.js"></script>
+
+    	
+		 <link rel="stylesheet" href="/layui/css/layui.css"  media="all">
+		 <link rel="stylesheet" href="/css/style1.css" />
+	</head>
+	<body>
+		<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+			  <ul class="layui-tab-title">
+			  	<div class="title-left">
+		  			<img src="/images/timg.jpg" href="Myhotel.html" height="34x" />
+		  		
+		  		</div>
+			    <div class="title-right">	
+				    <li class="layui-this">心仪房间</li>
+				    <li>主页</li>
+				    <li>投诉建议</li>
+				    <li><a href="denglu.html">登录</a></li>
+			        <li>注册</li>
+		    	</div>
+			  </ul>
+			  <div class="layui-tab-content" style="height: 100px;">
+			    <div class="layui-tab-item layui-show">
+			    	<div id="layer-photos-demo" class="layer-photos-demo">
+					  <img layer-pid="1" layer-src="/images/1.jpg" src="/images/room1title.jpg"width="1349px"height="294.66px" alt="图片名">
+					  <img layer-pid="2" layer-src="/images/2.jpg">
+					  <img layer-pid="3" layer-src="/images/3.jpg">
+					  <img layer-pid="4" layer-src="/images/4.jpg">
+					</div>
+					<div class="room1-title">
+						<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+						  <ul class="layui-tab-title">
+						    <li class="layui-this">详情</li>
+						    <li>评价</li>
+						    <li>位置</li>
+						    <li>须知</li>
+						  
+						  </ul>
+					</div>	  
+					<div class="layui-tab-content" style="height: 100px;">
+					
+					    <div class="layui-tab-item layui-show">
+					    	<div class="room1-content">
+					    		<div class="room1-left">
+					    			<a id="room1-left-1">
+					    				单人床
+					    			</a>
+					    			<hr class="layui-bg-gray">
+					    			<i class="layui-icon">&#xe68e;</i>
+					    			<a>一间卧室</a>
+					    			
+					    			<i class="layui-icon">&#xe636;</i>
+					    			<a>一间卫生间</a>
+					    			<i class="layui-icon">&#xe613;</i>
+					    			<a>最多住一人</a>
+					    			<hr class="layui-bg-gray">
+					    			<a id="room1-left-2">
+					    				房间介绍：<br />
+					    				
+					    				单人房是指房间里只有一张床，而房间里的配套设施
+					    				（牙刷、牙膏、肥皂、梳子、一次性拖鞋等）都只有一套。
+					    				内设单人床一张，另配有沙发、书写桌椅、电视机等家具设备。
+					    				由于单人间比较舒适，客房的隐秘性较强，不受外界干扰，房
+					    				价低于标准双人客房，比较适合从事商务旅游的单身客人住用。
+					    				根据客人的需求不同，单人间可分为：无浴室的单人间、带淋浴的单人间
+					    			</a>
+					    			<hr class="layui-bg-gray">
+					    			<a id="room1-left-3">
+					    				整个房间 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  无需与房东或房客共享空间，独享整个房源
+					    				<br/>入住/退房&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 入住时间 09:00 － 20:00 · 退房时间 11:00
+					    				<br/>可订状态 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;最少住2晚
+
+
+					    			</a>
+					    			<hr class="layui-bg-gray">
+					    		</div>
+					    		<div class="room1-right">
+					    			<div class="room1-right-in">
+						    			<a id="room1-right-1">
+						    				200元每晚
+						    			</a>
+						    			<hr class="layui-bg-gray" width="450px">
+						    			<form action="#">
+							    			<div class="room1-right-2">
+								    			<div class="room1-right-21">
+									    			<a id="room1-right-21font">时间</a>
+									    		</div>
+									    		<div class="room1-right-22">
+									    			<input name="inday" id="room1-right-22input"placeholder="入住时期" type="text"/>
+									    		</div>
+								    		</div>
+								    		<div class="room1-right-2">
+								    			<div class="room1-right-21">
+									    			<a id="room1-right-21font2">时间</a>
+									    		</div>
+									    		<div class="room1-right-22">
+									    			<input name="inday" id="room1-right-22input2"placeholder="退房时期" type="text"/>
+									    		</div>
+								    		</div>
+								    		<div class="room1-right-3">
+								    			<div class="room1-right-21">
+									    			<a id="room1-right-21font3">房客</a>
+									    		</div>
+					    			<!--//<input id="main-next-11input"placeholder="入住人数" />-->
+								    			<select name="number" id="room1-right-3input" lay-verify="">
+												  <option value="">请选择入住人数</option>
+												  <option value="010">1位</option>
+												  <option value="021">2位</option>
+												  <option value="0571">3位</option>
+												</select>
+												
+								    		</div>
+							    		
+								    		<hr class="layui-bg-gray">
+								    		<div class="room1-btn">
+								    		    <button type="submit" class="layui-btn layui-btn-normal1">预订房间</button>
+								    		</div>    
+								    	</form>	
+					    			</div>
+					    		</div>
+					    		
+					    	</div>
+					    	<div class="last">
+				    		<div class="last-1">
+				    			<a id="last-1-font1">加入
+				    			<br/>
+				    			 
+				    			</a> 
+				    			<a id="last-1-font2">MyHotel</a> 
+				    			
+				    			
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>MyHotel</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>工作机会</span>
+				    				<br />
+				    				<br />
+				    				<span>新闻</span>
+				    				<br />
+				    				<br />
+				    				<span>政策</span>
+				    				<br />
+				    				<br />
+				    				<span>帮助</span>
+				    				<br />
+				    				<br />	
+				    				<span>多元化与归属感</span>
+				    			</div>
+				    			
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>发现</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>信任与安全</span>
+				    				<br />
+				    				<br />
+				    				<span>旅行基金</span>
+				    				<br />
+				    				<br />
+				    				<span>礼品卡</span>
+				    				<br />
+				    				<br />
+				    				<span>MyHotel公民</span>
+				    				<br />
+				    				<br />	
+				    				<span>商务差旅</span>
+				    				<br />
+				    				<br />	
+				    				<span>旅行指南</span>
+				    			</div>
+				    		</div>
+				    		<div class="last-1">
+				    			<div class="last-1-1">
+				    				<span>出租</span>
+				    			</div>
+				    			<div class="last-1-2">
+				    				<span>为什么要出租</span>
+				    				<br />
+				    				<br />
+				    				<span>待客之道</span>
+				    				<br />
+				    				<br />
+				    				<span>房东义务</span>
+				    					
+				    			</div>
+				    		</div>
+				    	</div>
+				    	<hr class="layui-bg-gray">
+				    	<div class="di">
+				    		<div class="di-left">
+						  		<img src="/images/timg.jpg" href="Myhotel.html" height="34x" />
+						  		<a id="di-left-font">
+						  			MyHotel.By.Litengxu
+						  		</a>
+						  	</div>
+						  	<div class="di-right">
+						  		<a id="di-right-font">
+						  			条款
+						  			隐私
+						  			网站地图
+						  		</a>
+						  		
+						  	</div>
+				    	</div>
+					    </div>
+					    <div class="layui-tab-item">内容2</div>
+					    <div class="layui-tab-item">内容3</div>
+					    <div class="layui-tab-item">内容4</div>
+					    
+					  </div>
+					</div> 
+			    </div>
+			    <div class="layui-tab-item">内容2</div>
+			    <div class="layui-tab-item">内容3</div>
+			    <div class="layui-tab-item">内容4</div>
+			    <div class="layui-tab-item">内容5</div>
+			  </div>
+		</div> 
+	</body>
+	<script type="text/javascript">
+        laydate.render({
+            elem: '#room1-right-22input'
+        });
+        laydate.render({
+            elem: '#room1-right-22input2'
+        });
+	</script>
+	<script>
+            //调用示例
+			layer.photos({
+			  photos: '#layer-photos-demo'
+			  ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+			}); 
+	</script>	
+</html>

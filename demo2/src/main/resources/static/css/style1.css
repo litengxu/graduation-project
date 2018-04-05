@@ -1,0 +1,677 @@
+.title-right{
+	
+	float: right;
+}
+.title-left{
+	float: left;
+	margin-left: 20px;
+}
+.main-front{
+	padding-top: 90px;
+	padding-left: 150px;
+	
+	
+}
+#myhotel{
+	font-weight: 700 !important;
+    color: #FF5A5F !important;
+    display: block !important;
+    font-size: 48px;
+}
+#ziti{
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 48px !important;
+    line-height: 56px !important;
+    letter-spacing: -0.8px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    color: #484848 !important;
+    font-weight: 300 !important;
+}
+.main-next{
+
+	padding-left: 150px;	
+	display: block !important;
+    padding-top: 50px ;
+    padding-bottom: 8px !important;
+    width: 1050px;
+    height: 100px;
+    
+}
+.main-next-1{
+   float: left;
+   width: 33%;
+   height: 110px;
+   border:1px solid #D0D0D0;
+   filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);
+
+   -moz-box-shadow: 0px 0px 0px #909090;
+
+   -webkit-box-shadow: 2px 2px 10px #909090;
+
+    box-shadow:0px 3px 3px #909090;
+}
+
+/*.main-next-11{
+ 	float: left;
+   width: 255px;
+   height: 50%
+}*/
+#main-next-11front{
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 20px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #484848 !important;
+    display: block !important;
+    margin-left: 16px !important;
+    margin-top: 16px !important;
+}
+#main-next-11front2{
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 20px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #484848 !important;
+	display: block !important;
+	margin-left: 16px !important;
+	margin-top: 16px !important;
+}
+#main-next-11front3{
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 20px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #484848 !important;
+	display: block !important;
+	margin-left: 16px !important;
+	margin-top: 16px !important;
+}
+.main-next-12{
+	overflow: hidden !important;
+    position: relative !important;
+    height:70px;
+}
+#main-next-11input{
+	float: left;
+	margin-top: 20px;
+	margin-left: 18px;
+	height: 40px;
+	width:220px;
+	font-size: 21px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	border:none;
+	color:#757575;
+}
+.main-next-2{
+   float: left;
+   width: 33%;
+   height: 110px;
+   border:1px solid #D0D0D0;
+   filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);
+
+   -moz-box-shadow: 0px 0px 0px #909090;
+
+   -webkit-box-shadow: 2px 2px 10px #909090;
+
+   box-shadow:0px 3px 3px #909090;
+   
+}
+#main-next-21input{
+	margin-top: 20px;
+	margin-left: 18px;
+	height: 40px;
+	width:220px;
+	font-size: 21px;
+	border:none;
+}
+#main-next-21input2{
+	margin-top: 20px;
+	margin-left: 18px;
+	height: 40px;
+	width:220px;
+	font-size: 21px;
+	border:none;
+}
+.main-next-3{
+   float: left;
+   width: 33%;
+   height: 110px;
+   border:1px solid #D0D0D0;
+   filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);
+
+   -moz-box-shadow: 0px 0px 0px #909090;
+
+   -webkit-box-shadow: 2px 2px 10px #909090;
+
+    box-shadow:0px 3px 3px #909090;
+}
+
+.layui-btn-normal{
+	background-color:#FF5A5F;
+	margin-top: 0px;
+	
+}
+.lunbo{
+	padding-top: 90px;
+	padding-left: 150px;
+	height: 440px;
+}
+.come{
+	/*padding-top: 50px;*/
+	width: 1200px;
+	height: 60px;
+}
+#come-font-1{
+	float: left;
+	padding-top: 25px;
+	padding-left:145px;
+	font-weight: 700 !important;
+    margin-bottom: 0px !important;
+    font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 28px !important;
+    line-height: 32px !important;
+    letter-spacing: -0.6px !important;
+
+    padding-bottom: 2px !important;
+    color: #484848 !important;
+}
+#come-font-12{
+	float: left;
+	padding-top: 30px;
+	padding-left:145px;
+	font-weight: 700 !important;
+	margin-bottom: 0px !important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 28px !important;
+	line-height: 32px !important;
+	letter-spacing: -0.6px !important;
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+	color: #484848 !important;
+}
+.come-list{
+	float: left;
+
+	padding-left:145px;
+	padding-top: 20px;
+	width:850px ;
+	height: 120px;
+}
+.come-list-pace{
+
+	height: 72px;
+	width: 240px;
+	border:1px solid #D0D0D0;
+   filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);
+
+   -moz-box-shadow: 0px 0px 0px #909090;
+
+   -webkit-box-shadow: 2px 2px 10px #909090;
+
+    box-shadow:0px 3px 3px #909090;
+}
+.come-list-1{
+	float: left;
+   width: 33%;
+   height: 72px;
+   
+}
+.come-list-11{
+	float: left;
+	width: 50%;
+	height: 100%;
+	
+}
+.come-list-12{
+	float: left;
+	width: 50%;
+	height: 100%;
+	
+}
+#come-list-12font{
+	float: left;
+	padding-left: 0px;
+	padding-top: 20px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 18px !important;
+}
+#come-list-12font2{
+	float: left;
+	padding-left: 0px;
+	padding-top: 20px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 18px !important;
+}
+#come-list-12font3{
+	float: left;
+	padding-left: 0px;
+	padding-top: 20px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 18px !important;
+}
+.come-list-2{
+	float: left;
+   width: 33%;
+   height: 110px;
+}
+.come-list-3{
+	float: left;
+   width: 33%;
+   height: 110px;
+}
+.come-2{
+	float: left;
+	padding-top: 10px;
+	width: 1050px;
+}
+.room-list{
+	float: left;
+	margin-left: 145px;
+	width: 1050px;
+	height: 300px;
+}
+.div-list{
+	
+}
+.div-list-1{
+	float: left;
+	width: 33%;
+	height: 280px;
+}
+#div-list-1font{
+	 width: 130px;
+	 float: left;
+	 margin-top: 10px;
+	 margin-left: 5px;
+	 font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	 font-size: 15px !important;
+	 color: #484848;
+
+ }
+#div-list-1font2{
+	width: 130px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 15px !important;
+	color: #484848;
+
+}
+#div-list-1font3{
+	width: 130px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 15px !important;
+	color: #484848;
+
+}
+#div-list-1font4{
+	width: 130px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 15px !important;
+	color: #484848;
+
+}
+#div-list-1font5{
+	width: 130px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 15px !important;
+	color: #484848;
+
+}
+#div-list-1font6{
+	width: 130px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 15px !important;
+	color: #484848;
+
+}
+#div-list-btn{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn2{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn3{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn4{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn5{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn6{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn7{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn8{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn9{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn10{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn11{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-btn12{
+	float: right;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#div-list-type1{
+	 float: left;
+	 margin-top: 8px;
+	 margin-left: 5px;
+	 font-weight: normal !important;
+	 word-wrap: break-word !important;
+	 font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	 font-size: 15px !important;
+	 line-height: 18px !important;
+	 letter-spacing: 0.2px !important;
+	 padding-top: 0px !important;
+	 padding-bottom: 0px !important;
+	 color: #8C9292 !important;
+ }
+#div-list-type12{
+	float: left;
+	margin-top: 8px;
+	margin-left: 5px;
+	font-weight: normal !important;
+	word-wrap: break-word !important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	font-size: 15px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #8C9292 !important;
+}
+#div-list-type13{
+	float: left;
+	margin-top: 8px;
+	margin-left: 5px;
+	font-weight: normal !important;
+	word-wrap: break-word !important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	font-size: 15px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #8C9292 !important;
+}
+#div-list-type14{
+	float: left;
+	margin-top: 8px;
+	margin-left: 5px;
+	font-weight: normal !important;
+	word-wrap: break-word !important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	font-size: 15px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #8C9292 !important;
+}
+#div-list-type15{
+	float: left;
+	margin-top: 8px;
+	margin-left: 5px;
+	font-weight: normal !important;
+	word-wrap: break-word !important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	font-size: 15px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #8C9292 !important;
+}
+#div-list-type16{
+	float: left;
+	margin-top: 8px;
+	margin-left: 5px;
+	font-weight: normal !important;
+	word-wrap: break-word !important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	font-size: 15px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #8C9292 !important;
+}
+.last-1{
+	float: left;
+	width: 25%;
+	height: 350px;
+}
+#last-1-font1{
+	float: left;
+	padding-top: 90px;
+	padding-left: 110px;
+	font-size: 25px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	color: #8C9292 !important;
+}
+#last-1-font2{
+	float: left;
+	padding-top: 10px;
+	padding-left: 110px;
+	font-size: 28px;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	color: #8C9292 !important;
+}
+.last-1-1{
+	float: left;
+	
+	margin-top: 70px;
+	
+	margin-left: 110px;
+    word-wrap: break-word !important;
+    font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #484848 !important;
+    font-weight: 700 !important;
+}
+.last-1-2{	
+	float: left;
+	
+	margin-top: 30px;
+	
+	margin-left: 110px;
+    word-wrap: break-word !important;
+    font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #767676!important;
+    
+}
+.di{
+	height: 100px;
+}
+.di-left{
+
+	float: left;
+	margin-left: 20px;
+	margin-top: 30px;
+
+}
+#di-left-font{
+	
+	color: #767676!important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 10px;
+	margin-top: 35px;
+}
+.di-right{
+	float: right;
+	margin-left: 20px;
+	margin-top: 30px;
+}
+#di-right-font{
+	float: right;
+	color: #767676!important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 10px;
+	margin-top: 40px;
+	
+}
+.room1-title{
+	float:left;
+	margin-left: 140px;
+	width: 1100px;
+}
+.room1-content{
+	width: 1100px;
+}
+.room1-left{
+	float: left;
+	width: 50%;
+}
+#room1-left-1{
+	color: #484848;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 30px;
+	margin-top: 40px;
+}
+#room1-left-2{
+	font-size: 17px !important;
+    font-weight: 300 !important;
+    word-wrap: break-word;
+    color: #767676;
+}
+#room1-left-3{
+	font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 19px;		
+}
+.room1-right{
+	float: left;
+	width: 50%;
+	height:400px;
+}
+.room1-right-in{
+	border:1px solid #D0D0D0;
+	margin-top: 30px;
+	margin-left: 20px;
+	width: 500px;
+	height: 400px;
+}
+#room1-right-1{
+	float: left;
+	margin-top: 50px;
+	margin-left: 180px;
+	font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 19px;
+}
+.room1-right-2{
+	float: left;
+	width: 33%;
+	height: 150px;
+}
+.room1-right-21{
+	float: left;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.room1-right-22{
+	float: left;
+	margin-top: 10px;
+	margin-left: 20px;
+	width: 100px;
+}
+#room1-right-22input{
+	float: left;
+	margin-top:5px;
+	margin-left: 5px;
+	width: 120px;
+	height: 35px;
+}
+#room1-right-22input2{
+	float: left;
+	margin-top:5px;
+	margin-left: 5px;
+	width: 120px;
+	height: 35px;
+}
+.room1-right-3{
+	float: left;
+	width: 33%;
+	height: 150px;
+}
+#room1-right-3input{
+	float: left;
+	margin-top:15px;
+	margin-left: 25px;
+	width: 120px;
+	height: 40px;
+}
+.room1-btn{
+    float: left;
+	margin-top:15px;
+	margin-left:60px;
+	width: 200px;
+	height: 40px;
+}
+.layui-btn-normal1{
+	width: 370px;
+	height: 60px;
+}
+.layui-btn-normallogin{
+	width: 300px;
+}

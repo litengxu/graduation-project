@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="/laydate/laydate.js"></script>
+		<script src="/layer/layer.js"></script>
+		<script src="/layui/layui.js"></script>
+		<script src="/js/lunbo.js"></script>
+		<script src="/js/title.js"></script>
+		
+    	<script type="text/javascript">
+    		laydate.render({
+					  elem: '#main-next-21input'
+					});	
+			laydate.render({
+					  elem: '#main-next-21input2'
+					});	
+    	</script>
+		 <link rel="stylesheet" href="/layui/css/layui.css"  media="all">
+        <link rel="stylesheet" href="/css/style.css" />
+		 <link rel="stylesheet" href="/css/style1.css" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--webfonts-->
+
+    <!--//webfonts-->
+    <script type="text/javascript">
+        /**
+         * 注册
+         */
+        function regist() {
+            // 如果需要在新窗口打开注册界面；
+            // window.open('Untitled-2.html');
+            // 如果需要在当前窗口打开登录界面
+            window.location.href = '/front/register';
+        }
+    </script>
+
+
+</head>
+<!--<span style="font-size:18px;"><strong><body>-->
+    <!--<form action="/front/addlogin" name="loginfrom" accept-charset="utf-8" method="post">-->
+        <!--<label class="label-tips" for="u">账号:</label>-->
+        <!--<input type="text" id="u" name="username" class="inputstyle"/>-->
+        <!--<div>-->
+            <!--<label class="lable-tips" for="password">密码:</label>-->
+            <!--<input type="password" id="password" name="password" class="inputstyle" />-->
+        <!--</div>-->
+        <!--<input type="submit" name="登录"/>-->
+        <!--<a href="/front/register" class="zcxy" target="_blank">注册</a>-->
+    <!--</form>-->
+<!--</body></strong></span>-->
+<body>
+<style type="text/css">
+
+    @import "/css/style.css";
+
+
+</style>
+<div class="main">
+    <div class="header" >
+        <h1>登录帐户！</h1>
+    </div>
+    <p></p>
+    <form action="http://127.0.0.1:8080/front/addlogin" name="loginfrom" accept-charset="utf-8" method="post">
+        <ul class="right-form">
+            <h3>登录:</h3>
+            <div>
+                <li><input type="text"  placeholder="Username"id="u" name="username" required/></li>
+                <li> <input type="password"  placeholder="Password"id="password" name="password"  required/></li>
+                
+               <!-- //<input type="submit" onClick="myFunction()" value="登录" >-->
+                <button type="submit" class="layui-btn layui-btn-normallogin" style="width: 445px">登录</button>
+
+            </div>
+            <hr class="layui-bg-gray">
+                <!--<input type="button" onClick="regist()" value="注册" >-->
+
+                <a href="/front/register">还没有账号？去注册 →</a>
+            <div class="clear"> </div>
+        </ul>
+        <div class="clear"> </div>
+
+    </form>
+  <hr class="layui-bg-gray">
+</div>
+
+
+</body>
+
+</html>
