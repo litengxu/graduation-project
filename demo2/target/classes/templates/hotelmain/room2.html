@@ -247,6 +247,31 @@
 			layer.photos({
 			  photos: '#layer-photos-demo'
 			  ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
-			}); 
+			});
+            layui.use(['util', 'laydate', 'layer'], function(){
+                var util = layui.util
+                    ,laydate = layui.laydate
+                    ,layer = layui.layer;
+                //固定块
+                util.fixbar({
+                    bar1: true
+                    ,bar2: false
+                    ,css: {right: 50, bottom: 100}
+                    ,bgcolor: '#393D49'
+                    ,click: function(type){
+                        if(type === 'bar1'){
+                            window.location.href="/map/baidu";
+                        } else if(type === 'bar2') {
+                            layer.msg('两个bar都可以设定是否开启')
+                        }
+                    }
+                });
+
+
+
+
+
+            });
+
 	</script>	
 </html>

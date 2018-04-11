@@ -63,11 +63,14 @@
 	margin-left: 90px;
 }
 #username{
-	
+	height: 38px;
 	width:400px;
+	margin-top: 10px;
 	}
 #password{
-	width: 400px;
+	height: 38px;
+	width:400px;
+	margin-top: 10px;
 }
 #card{
 	width: 400px;

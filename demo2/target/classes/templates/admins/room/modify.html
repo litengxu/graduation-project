@@ -118,6 +118,7 @@
                 <li class="layui-nav-item"><a href="/users/admin">住客信息</a></li>
                 <li class="layui-nav-item"><a href="/room/list">房间信息</a></li>
                 <li class="layui-nav-item"><a href="/reserveroom/reserve">预订房间</a></li>
+                <li class="layui-nav-item"><a href="/history/historylist">历史信息</a></li>
             </ul>
         </div>
     </div>
@@ -137,7 +138,7 @@
                             <ul class="left-form">
                                 <h2>编辑房间:</h2>
                                 <li>
-                                    <input type="text" id="id"  name="id"  placeholder="type" th:value="*{id}" required/>
+                                    <input type="hidden" id="id"  name="id"  placeholder="type" th:value="*{id}" required/>
 
                                     <div class="clear"> </div>
                                 </li>

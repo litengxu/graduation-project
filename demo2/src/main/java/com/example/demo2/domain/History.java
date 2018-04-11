@@ -3,6 +3,7 @@ package com.example.demo2.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity(name="History")
 public class History {
@@ -20,15 +21,25 @@ public class History {
 
     private Long number;
 
-    private String inday;
+    private Date inday;
 
-    private String outday;
+    private Date outday;
 
-    private String soutday;
+    private Date soutday;
 
     private String money;
 
     private  String roomid;
+
+    private String  type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getRoomid() {
         return roomid;
@@ -86,27 +97,27 @@ public class History {
         this.number = number;
     }
 
-    public String getInday() {
+    public Date getInday() {
         return inday;
     }
 
-    public void setInday(String inday) {
+    public void setInday(Date inday) {
         this.inday = inday;
     }
 
-    public String getOutday() {
+    public Date getOutday() {
         return outday;
     }
 
-    public void setOutday(String outday) {
+    public void setOutday(Date outday) {
         this.outday = outday;
     }
 
-    public String getSoutday() {
+    public Date getSoutday() {
         return soutday;
     }
 
-    public void setSoutday(String soutday) {
+    public void setSoutday(Date soutday) {
         this.soutday = soutday;
     }
 

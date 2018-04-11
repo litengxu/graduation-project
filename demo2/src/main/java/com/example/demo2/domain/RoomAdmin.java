@@ -12,7 +12,6 @@ public class RoomAdmin {
     @GeneratedValue
     private Long id;
 
-
     private String username;
 
     private String card;

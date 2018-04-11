@@ -8,9 +8,9 @@ import java.util.Date;
 import java.util.List;
 
 public interface RoomAdminRepository extends JpaRepository<RoomAdmin,Long>{
-    public RoomAdmin findByUsername(String username);
+    public List<RoomAdmin> findByUsername(String username);
     public RoomAdmin deleteByUsername(String username);
     public List<RoomAdmin> findByInday(Date inday);
-
+   // public RoomAdmin findById(Long id);
 
 }

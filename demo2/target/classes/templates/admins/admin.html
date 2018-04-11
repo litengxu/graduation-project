@@ -7,7 +7,7 @@
     <title>Hotel后台管理</title>
     <link rel="stylesheet" href="/layui/css/layui.css">
     <link rel="stylesheet" href="/css/style.css">
-
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body class="layui-layout-body">
 <style type="text/css">
@@ -59,17 +59,22 @@
                 </li>-->
 
                 <li class="layui-nav-item">
-                    <a href="/roomadmins/roomadmin">住房管理</a>
+                    <a href="javascript:;">住房管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/roomadmins/roomadmin">已入住<span class="layui-badge" id="span1"></span></a></dd>
+                        <dd><a href="#">已下单<span class="layui-badge" id="span2"></span></a></dd>
+                    </dl>
 
                 </li>
                 <li class="layui-nav-item"><a href="javascript:;">住客信息</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/users/admin">网上预订</a></dd>
-                        <dd><a href="/users/juser">到店预订</a></dd>
+                        <dd><a href="/users/admin">网上预订<span class="layui-badge" id="span3"></span></a></dd>
+                        <dd><a href="/users/juser">到店预订<span class="layui-badge" id="span4"></span></a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="/room/list">房间信息</a></li>
                 <li class="layui-nav-item"><a href="/reserveroom/reserve">预订房间</a></li>
+                <li class="layui-nav-item"><a href="/history/historylist">历史信息</a></li>
             </ul>
         </div>
     </div>
@@ -94,6 +99,45 @@
         var element = layui.element;
 
     });
+    $(document).ready(function () {
+        $.ajax({
+            url:'/roomadmins/count',
+            async:true,
+            type:'GET',
+            dataType:'html',
+            success:function (result) {
+                $("#span1").html(result);
+            }
+        });
+        $.ajax({
+            url:'/Order/count',
+            async:true,
+            type:'GET',
+            dataType:'html',
+            success:function (result) {
+                $("#span2").html(result);
+            }
+        });
+        $.ajax({
+            url:'/users/count1',
+            async:true,
+            type:'GET',
+            dataType:'html',
+            success:function (result) {
+                $("#span3").html(result);
+            }
+        })
+        $.ajax({
+            url:'/users/count2',
+            async:true,
+            type:'GET',
+            dataType:'html',
+            success:function (result) {
+                $("#span4").html(result);
+            }
+        })
+    });
+
 </script>
 </body>
 </html>

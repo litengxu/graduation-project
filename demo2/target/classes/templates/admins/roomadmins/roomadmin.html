@@ -113,6 +113,7 @@
                 <li class="layui-nav-item"><a href="/users/admin">住客信息</a></li>
                 <li class="layui-nav-item"><a href="/room/list">房间信息</a></li>
                 <li class="layui-nav-item"><a href="/reserveroom/reserve">预订房间</a></li>
+                <li class="layui-nav-item"><a href="/history/historylist">历史信息</a></li>
             </ul>
         </div>
     </div>
@@ -188,22 +189,22 @@
                 </form>
             </div>
             <table class="layui-table" lay-data="{width: 1130, height:480, url:'/roomadmins/list2/', page:true, id:'idTest'}" lay-filter="demo">
-                <thead>
-                <tr>
-                    <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
-                    <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
-                    <th lay-data="{field:'username', width:80}">用户名</th>
-                    <th lay-data="{field:'card', width:80,sort:true}">证件号</th>
-                    <th lay-data="{field:'type', width:80}" >类型</th>
-                    <th lay-data="{field:'inday', width:160,sort:true}" th:formtarget="yyyy-mm-dd">入住时间</th>
-                    <th lay-data="{field:'outday', width:160,sort:true}">离开时间</th>
-                    <th lay-data="{field:'soutday', width:160,sort:true}">实际离开时间</th>
-                    <th lay-data="{field:'money', width:160,sort:true}">金额</th>
-                    <th lay-data="{field:'roomid', width:160,sort:true}">入住房间号</th>
-                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
-                </tr>
-                </thead>
-            </table>
+            <thead>
+            <tr>
+                <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
+                <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
+                <th lay-data="{field:'username', width:80}">用户名</th>
+                <th lay-data="{field:'card', width:80,sort:true}">证件号</th>
+                <th lay-data="{field:'type', width:80}" >类型</th>
+                <th lay-data="{field:'inday', width:160,sort:true}" th:formtarget="yyyy-mm-dd">入住时间</th>
+                <th lay-data="{field:'outday', width:160,sort:true}">离开时间</th>
+                <th lay-data="{field:'soutday', width:160,sort:true}">实际离开时间</th>
+                <th lay-data="{field:'money', width:160,sort:true}">金额</th>
+                <th lay-data="{field:'roomid', width:160,sort:true}">入住房间号</th>
+                <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
+            </tr>
+            </thead>
+        </table>
 
 
 

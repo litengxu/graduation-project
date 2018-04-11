@@ -1,7 +1,9 @@
 package com.example.demo2.Controller;
 
 import ch.qos.logback.core.util.FileUtil;
+import com.example.demo2.domain.History;
 import com.example.demo2.domain.User;
+import com.example.demo2.repository.historyRepository;
 import com.example.demo2.repository.userRepository;
 import com.example.demo2.Configure.upload;
 
@@ -16,8 +18,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static sun.plugin.javascript.navig.JSType.Location;
 
@@ -27,6 +32,8 @@ public class quserController {
 
     @Autowired
     private userRepository userRepository;
+    @Autowired
+    private historyRepository historyRepository;
     private static final Logger logger = LoggerFactory.getLogger(quserController.class);
     @GetMapping("/xiugai/{username}")
     public ModelAndView xiugai(HttpServletRequest request, @PathVariable("username")String username){
@@ -40,10 +47,12 @@ public class quserController {
         return mv;
     }
     @PostMapping("/xiugai2")
-    @ResponseBody
-    public ModelAndView  xiugai2(HttpServletRequest request){
+    public void  xiugai2(HttpServletRequest request, HttpServletResponse response)throws IOException{
+        System.out.println("===============");
         ModelAndView mv=new ModelAndView();
+
         String username=request.getParameter("username");
+        System.out.println(username);
         String password=request.getParameter("password");
         String sex=request.getParameter("sex");
         String phone=request.getParameter("phone");
@@ -54,12 +63,20 @@ public class quserController {
         user.setCard(card);
         user.setPassword(password);
         userRepository.save(user);
-        mv.addObject("password",user.getPassword());
+        List<History> historyList=new ArrayList<>();
+        for(History history:historyRepository.findByUsername(username)){
+           history.setPhone(phone);
+           history.setSex(sex);
+           history.setCard(card);
+           historyRepository.save(history);
+        }
+        response.getWriter().print("success");
+       /* mv.addObject("password",user.getPassword());
         mv.addObject("sex",user.getSex());
         mv.addObject("card",user.getCard());
         mv.addObject("phone",user.getPhone());
         mv.setViewName("/hotelmain/usermes");
-        return mv;
+        return mv;*/
     }
     @RequestMapping("/upload")
    public String upload(){
@@ -67,11 +84,13 @@ public class quserController {
     }
     @RequestMapping("/upup")
     @ResponseBody
-    public String upload(@RequestParam("file") MultipartFile file,HttpServletRequest request) {
+    public String upload(@RequestParam("file") MultipartFile file,HttpServletRequest request,HttpServletResponse response)throws IOException{
         String username=request.getParameter("username");
             if (file.isEmpty()) {
-        return "文件为空";
+       return "文件为空";
     }
+
+        System.out.println("===================------------------------");
     // 获取文件名
     String fileName = file.getOriginalFilename(); logger.info("上传的文件名为:" + fileName);
     // 获取文件的后缀名
@@ -93,12 +112,14 @@ public class quserController {
         System.out.println(icon);
         user.setIcon(icon);
         userRepository.save(user);
-        return "上传成功";
+        response.getWriter().print("成功");
+      return "上传成功";
     } catch (IllegalStateException e) {
         e.printStackTrace();
     } catch (IOException e) {
         e.printStackTrace();
     }
+        response.getWriter().print("失败");
             return "上传失败";
 }
     }

@@ -69,6 +69,7 @@
                 <li class="layui-nav-item"><a href="/users/admin">住客信息</a></li>
                 <li class="layui-nav-item"><a href="/room/list">房间信息</a></li>
                 <li class="layui-nav-item"><a href="/reserveroom/reserve">预订房间</a></li>
+                <li class="layui-nav-item"><a href="/history/historylist">历史信息</a></li>
             </ul>
         </div>
     </div>
@@ -99,13 +100,13 @@
                                 <h2>住客信息:</h2>
                                 <h2>ID:</h2>
                                 <li>
-                                    <input type="text" id="id"  name="id"  placeholder="type" th:value="*{id}" required/>
+                                    <input type="hidden" id="id"  name="id"  placeholder="type" th:value="*{id}" required/>
 
                                     <div class="clear"> </div>
                                 </li>
                                 <h2>用户名：</h2>
                                 <li>
-                                    <input type="text" id="username"  name="username"  placeholder="username" th:value="*{username}" required/>
+                                    <input type="text" id="username"  name="username" readonly="readonly"  placeholder="username" th:value="*{username}" required/>
 
                                     <div class="clear"> </div>
                                 </li>
@@ -117,19 +118,19 @@
                                 </li>
                                 <h2>类型：</h2>
                                 <li>
-                                    <input type="text" id="type"  name="type"  placeholder="type" th:value="*{type}" required/>
+                                    <input type="text" id="type"  name="type"   readonly="readonly" placeholder="type" th:value="*{type}" required/>
 
                                     <div class="clear"> </div>
                                 </li>
                                 <h2>入住时间：</h2>
                                 <li>
-                                    <input type="text" id="inday"  name="inday"  placeholder="inday" th:value="*{inday}" required/>
+                                    <input type="text" id="inday"  name="inday"   readonly="readonly" placeholder="inday" th:value="*{inday}" required/>
 
                                     <div class="clear"> </div>
                                 </li>
                                 <h2>离开时间：</h2>
                                 <li>
-                                    <input type="text" id="outday"  name="outday"  placeholder="outday" th:value="*{outday}" required/>
+                                    <input type="text" id="outday"  name="outday" readonly="readonly"   placeholder="outday" th:value="*{outday}" required/>
 
                                     <div class="clear"> </div>
                                 </li>
@@ -147,7 +148,7 @@
                                 </li>
                                 <h2>入住房间号：</h2>
                                 <li>
-                                    <input type="text" id="roomid"  name="roomid"  placeholder="roomid" th:value="*{roomid}" required/>
+                                    <input type="text" id="roomid"  name="roomid"  readonly="readonly" placeholder="roomid" th:value="*{roomid}" required/>
 
                                     <div class="clear"> </div>
                                 </li>

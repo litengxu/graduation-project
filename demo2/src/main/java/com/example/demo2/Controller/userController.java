@@ -1,10 +1,7 @@
 package com.example.demo2.Controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.demo2.domain.Juser;
-import com.example.demo2.domain.Room;
-import com.example.demo2.domain.RoomAdmin;
-import com.example.demo2.domain.User;
+import com.example.demo2.domain.*;
 import com.example.demo2.repository.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
@@ -44,6 +41,8 @@ public class userController {
     private userPageRepository dao;
     @Autowired
     private juserPageRepository juserPageRepository;
+    @Autowired
+    private historyRepository historyRepository;
     /**
      * 从 用户存储库 获取用户列表
      * @return
@@ -115,13 +114,24 @@ public class userController {
             }
 
         }
-        /*System.out.println("asdasdasds");
-        model.addAttribute("userlist",getUserlist());
-         model.addAttribute("title","用户管理");
 
-        System.out.println("daoledale");
-        return new ModelAndView("users/list", "userModel", model);*/
 
+    }
+    @RequestMapping("/count1")
+    public void count1(HttpServletResponse response)throws IOException{
+        int count=0;
+        for (User user:userRepository.findAll()){
+            count++;
+        }
+        response.getWriter().print(count);
+    }
+    @RequestMapping("/count2")
+    public void count2(HttpServletResponse response)throws IOException{
+        int count=0;
+        for (Juser juser:juserRepository.findAll()){
+            count++;
+        }
+        response.getWriter().print(count);
     }
     @RequestMapping(value="/list2")
     @ResponseBody
@@ -260,16 +270,16 @@ public class userController {
 
     }*/
 
-    @GetMapping(value="delete/{username}")
+  /*  @GetMapping(value="delete/{username}")
     public ModelAndView deleteuser(@PathVariable("username") String username,Model model){
         RoomAdmin roomAdmin=roomAdminRepository.findByUsername(username);
         Long a=roomAdmin.getId();
-       /* String type=roomAdmin.getType();
+       *//* String type=roomAdmin.getType();
         Room room = roomRepository.findByType(type);
         Long count=room.getCount();
         count++;
         room.setCount(count);
-        roomRepository.save(room);*/
+        roomRepository.save(room);*//*
         roomAdminRepository.deleteById(a);
         User user=userRepository.findByUsername(username);
         Long b=user.getId();
@@ -280,7 +290,7 @@ public class userController {
         mv.setViewName(" users/admin");
         return mv;
 
-    }
+    }*/
     @GetMapping(value = "modify/{id}")
     public ModelAndView modifyuser(@PathVariable("id") Long id,Model model){
         User user =userRepository.getOne(id);
@@ -294,7 +304,16 @@ public class userController {
     public ModelAndView create(User user ) {
         userRepository.save(user);
         ModelAndView mv=new ModelAndView();
-
+        String username=user.getUsername();
+        String sex=user.getSex();
+        String phone=user.getPhone();
+        String card=user.getCard();
+        for(History history:historyRepository.findByUsername(username)){
+            history.setPhone(phone);
+            history.setSex(sex);
+            history.setCard(card);
+            historyRepository.save(history);
+        }
         mv.setViewName("redirect:/users/admin");
         return  mv;
     }

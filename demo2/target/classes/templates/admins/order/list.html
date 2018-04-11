@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Hotel后台管理</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!--    <<script>
+
+                $(document).ready(function(){
+
+                    function action() {
+                        $.ajax({
+                        type: 'POST',
+                        url: '/roomadmins/search',
+                        datatype:"json",
+                        traditional:true,
+                        data:{
+                            username:$("#result").val(),
+                        },
+                        success: function () {
+                            $("#kk").html();
+                        },
+                        errror: function () {
+
+                        }
+                    });
+                    }
+                    action();
+                });
+
+
+    </script>-->
+</head>
+<body class="layui-layout-body">
+
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <!-- <li class="layui-nav-item"><a href="">控制台</a></li>
+             <li class="layui-nav-item"><a href="">商品管理</a></li>-->
+            <li class="layui-nav-item"><a href="/users/admin">用户</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="/adminsmes/mes">
+                    <img th:src="${session.user.getIcon()}" class="layui-nav-img"> 管理
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="/adminsmes/mes">基本资料</a></dd>
+                    <dd><a href="/con/delCookie">安全退出</a></dd>
+                </dl>
+            </li>,
+            <li class="layui-nav-item"><a href=""></a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <!--<a class="" href="javascript:;">所有商品</a>-->
+                    <!--<dl class="layui-nav-child">-->
+                    <!--<dd><a href="/users/admin">列表一</a></dd>-->
+                    <!--<dd><a href="javascript:;">列表二</a></dd>-->
+                    <!--<dd><a href="javascript:;">列表三</a></dd>-->
+                    <!--<dd><a href="">超链接</a></dd>-->
+                    <!--</dl>-->
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/roomadmins/roomadmin">住房管理</a>
+                </li>
+                <li class="layui-nav-item"><a href="/users/admin">住客信息</a></li>
+                <li class="layui-nav-item"><a href="/room/list">房间信息</a></li>
+                <li class="layui-nav-item"><a href="/reserveroom/reserve">预订房间</a></li>
+                <li class="layui-nav-item"><a href="/history/historylist">历史信息</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 3px;">
+
+            <input type="hidden" th:value="${username}" id="result">
+
+            <div class="demoTable">
+
+                搜索用户：
+
+                <div class="layui-inline">
+
+                    <input class="layui-input" name="username" id="demoReload" placeholder="Username" autocomplete="off">
+
+
+                </div>
+                <button class="layui-btn" data-type="reload" type="submit" id="sosuo">搜索</button>
+
+            </div>
+            <table class="layui-hide" id="LAY_table_user" lay-filter="demo"lay-data="{height：800px}"></table>
+        </div>
+    </div>
+</div>
+
+<div class="layui-footer">
+    <!-- 底部固定区域 -->
+    ©后台管理-By:litengxu
+
+</div>
+
+</div>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script src="/layui/layui.js"></script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">入住</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">退房</a>
+</script>
+
+
+<script src="/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+
+    var url1='/Order/list2/';
+    /* document.getElementById('sosuo').onclick=function (ev) {
+
+     }*/
+    $("#sosuo").click(function () {
+        var result= $("#demoReload").val()
+
+        url1='/Order/search/'+result;
+
+        layui.use('table', function(){
+
+            var table = layui.table;
+
+            table.render({
+                elem: '#LAY_table_user'
+                ,url: url1
+                ,cols: [
+                    [
+                        {checkbox: true, fixed: true}
+                        ,{field:'id', title: 'ID', width:80, sort: true, fixed: true}
+                        ,{field:'username', title: '用户名', width:80}
+                        ,{field:'card', title: '证件号', width:80, sort: true}
+                        ,{field:'type', title: '类型', width:80}
+                        ,{field:'inday', title: '入住时间'}
+                        ,{field:'outday', title: '离店时间', sort: true, width:80}
+                        ,{field:'soutday', title: '实际离店时间', sort: true, width:80}
+                        ,{field:'money', title: '金额', sort:true,width:80}
+                        ,{field:'number', title: '人数', sort: true, width:80}
+                        ,{field:'roomid', title: '房间号', sort: true, width:135}
+                        ,{ fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}
+
+
+                    ]
+                ]
+                ,id: 'testReload'
+                ,page: true
+                ,height:500
+            });
+            table.on('tool(demo)', function(obj){
+                var data = obj.data;
+                if(obj.event === 'detail'){
+                    layer.confirm('确定入住么', function(index){
+                        window.location.href='/Order/inhotel/' + data.id;
+                        obj.del();
+                        layer.close(index);
+                    });
+                    // layer.msg('ID：'+ data.id + ' 的查看操作');
+                } else if(obj.event === 'del'){
+                    layer.confirm('真的退房么', function(index){
+                        window.location.href='/Order/delete/' + data.id +"&"+ data.username;
+                        obj.del();
+                        layer.close(index);
+                    });
+                } else if(obj.event === 'edit'){
+                    window.location.href='/Order/modify/' + data.id;
+                    //  layer.alert('编辑行：<br>'+ JSON.stringify(data))
+                }
+            });
+        });
+    });
+
+    layui.use('table', function(){
+
+        var table = layui.table;
+
+        table.render({
+            elem: '#LAY_table_user'
+            ,url: url1
+            ,cols: [
+                [
+                    {checkbox: true, fixed: true}
+                    ,{field:'id', title: 'ID', width:80, sort: true, fixed: true}
+                    ,{field:'username', title: '用户名', width:80}
+                    ,{field:'card', title: '证件号', width:80, sort: true}
+                    ,{field:'type', title: '类型', width:80}
+                    ,{field:'inday', title: '入住时间'}
+                    ,{field:'outday', title: '离店时间', sort: true, width:80}
+                    ,{field:'soutday', title: '实际离店时间', sort: true, width:80}
+                    ,{field:'money', title: '金额', sort:true,width:80}
+                    ,{field:'number', title: '人数', sort: true, width:80}
+                    ,{field:'roomid', title: '房间号', sort: true, width:135}
+                    ,{ fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}
+
+                ]
+            ]
+            ,id: 'testReload'
+            ,page: true
+            ,height:500
+        });
+        //监听表格复选框选择
+        table.on('checkbox(demo)', function(obj){
+            console.log(obj)
+        });
+        //监听工具条
+        table.on('tool(demo)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){
+                layer.confirm('确定入住么', function(index){
+                    window.location.href='/Order/inhotel/' + data.id;
+                    obj.del();
+                    layer.close(index);
+                });
+                // layer.msg('ID：'+ data.id + ' 的查看操作');
+            } else if(obj.event === 'del'){
+                layer.confirm('真的退房么', function(index){
+
+                    alert("----------------------");
+                    window.location.href='/Order/delete/' + data.id +"&"+ data.username;
+                    obj.del();
+                    layer.close(index);
+                });
+            } else if(obj.event === 'edit'){
+                window.location.href='/Order/modify/' + data.id;
+                //  layer.alert('编辑行：<br>'+ JSON.stringify(data))
+            }
+        });
+
+        var $ = layui.$, active = {
+            getCheckData: function(){ //获取选中数据
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                layer.alert(JSON.stringify(data));
+            }
+            ,getCheckLength: function(){ //获取选中数目
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                layer.msg('选中了：'+ data.length + ' 个');
+            }
+            ,isAll: function(){ //验证是否全选
+                var checkStatus = table.checkStatus('idTest');
+                layer.msg(checkStatus.isAll ? '全选': '未全选')
+            }
+        };
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
+<script>
+
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>
+</html>

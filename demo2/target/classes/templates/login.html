@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
 
@@ -86,7 +86,14 @@
     </form>
   <hr class="layui-bg-gray">
 </div>
-
+<input type="hidden" th:value="${session.no}" id="no" >
+<script>
+    var c=$('#no').val();
+    if(c==1)
+    {
+        alert("账号或密码错误")
+    }
+</script>
 
 </body>
 

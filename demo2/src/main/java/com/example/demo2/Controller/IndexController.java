@@ -6,12 +6,17 @@ import com.example.demo2.repository.RoomRepository;
 import com.example.demo2.repository.userRepository;
 import org.hibernate.boot.jaxb.SourceType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.spel.ast.NullLiteral;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.constraints.Null;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,39 +85,63 @@ public class IndexController {
     HttpSession session = null;
     //注册控制页面
     @RequestMapping("/addregister")
-    public String register(HttpServletRequest request){
+    public String register(HttpServletRequest request,HttpServletResponse response)throws IOException{
+      try {
+          response.setContentType("text/html");
+          response.setCharacterEncoding("utf-8");
+          String username = request.getParameter("username");
+          String password = request.getParameter("password");
+          String password2 = request.getParameter("password2");
+          String sex = request.getParameter("sex");
+          String card = request.getParameter("card");
+          String phone = request.getParameter("phone");
+          String auth = request.getParameter("auth");
+          User user1 = userRepository.findByUsername(username);
+          if (user1 == null) {
+              if (password.equals(password2)) {
+                  User user = new User();
+                  user.setUsername(username);
+                  user.setPassword(password);
+                  user.setCard(card);
+                  user.setSex(sex);
+                  user.setPhone(phone);
+                  user.setAuth(auth);
+                  userRepository.save(user);
+                  return "login";
+
+              } else {
+                  return "register";
+              }
+          } else {
+           //   response.getWriter().print("您的用户名已注册");
+              return "register";
+          }
+      }catch (Exception e){
+          e.printStackTrace();
+          return "";
+      }
+
+    }
+    //注册ajax验证
+    @RequestMapping("/res")
+    public void res(HttpServletResponse response,HttpServletRequest request)throws IOException{
+
+        response.setContentType("text/html");
+        response.setCharacterEncoding("utf-8");
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String password2 = request.getParameter("password2");
-        String sex = request.getParameter("sex");
-        String card = request.getParameter("card");
-        String phone = request.getParameter("phone");
-        String auth=request.getParameter("auth");
-        if(password.equals(password2)){
-            User user = new User();
-            user.setUsername(username);
-            user.setPassword(password);
-            user.setCard(card);
-            user.setSex(sex);
-            user.setPhone(phone);
-            user.setAuth(auth);
-            userRepository.save(user);
-            return "login";
-
+        System.out.println("------");
+        System.out.println(username);
+        User user1 = userRepository.findByUsername(username);
+        if(user1!= null){
+            response.getWriter().print("您注册的用户名已存在");
         }
-        else
-        {
-            return "register";
-        }
-
-
     }
     //登录方法
     @RequestMapping("/addlogin")
-    public String login(HttpServletRequest request,HttpServletResponse response){
+    public ModelAndView login(HttpServletRequest request, HttpServletResponse response){
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
+        ModelAndView modelAndView=new ModelAndView();
         //将数据存储到session中
         session=request.getSession();
         session.setAttribute("username", username);
@@ -127,16 +156,23 @@ public class IndexController {
 
 //            if(user.getAuth()=="1")
             if("1".equals(user.getAuth())){
-                System.out.println("在这里");
-                str = "hotelmain/Myhotellogin";}
+                //User user1=userRepository.findByUsername(username);
+                modelAndView.addObject("password",user.getPassword());
+                modelAndView.addObject("sex",user.getSex());
+                modelAndView.addObject("card",user.getCard());
+                modelAndView.addObject("phone",user.getPhone());
+                modelAndView.setViewName("hotelmain/Myhotellogin");
+             }
             else{
-
-                str="admins/admin";}
+                modelAndView.setViewName("admins/admin");
+               }
         }else {
-            str = "index1";
+            session.setAttribute("no",1);
+            modelAndView.setViewName("login");
+
         }
 
-        return str;
+        return modelAndView;
     }
     @RequestMapping("/zhuye")
     public String zhuye(){

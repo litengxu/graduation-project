@@ -1,13 +1,7 @@
 package com.example.demo2.Controller;
 
-import com.example.demo2.domain.Juser;
-import com.example.demo2.domain.Room;
-import com.example.demo2.domain.RoomAdmin;
-import com.example.demo2.domain.User;
-import com.example.demo2.repository.JuserRepository;
-import com.example.demo2.repository.RoomAdminRepository;
-import com.example.demo2.repository.RoomRepository;
-import com.example.demo2.repository.userRepository;
+import com.example.demo2.domain.*;
+import com.example.demo2.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +29,10 @@ public class reserveController {
     private RoomAdminRepository roomAdminRepository;
     @Autowired
     private userRepository userRepository;
+    @Autowired
+    private historyRepository historyRepository;
+    @Autowired
+    private OrderRepository orderRepository;
     private List<Room> getRoomlist(){
 
         List<Room> rooms=new ArrayList<>();
@@ -74,6 +72,8 @@ public class reserveController {
     @RequestMapping("/yuding")
     public ModelAndView reserve(HttpServletRequest request){
         String username=request.getParameter("username");
+        String sex=request.getParameter("sex");
+        String phone=request.getParameter("phone");
         String card=request.getParameter("card");
         String inday1=request.getParameter("inday");
 
@@ -165,11 +165,13 @@ public class reserveController {
                     if(kk==0){
                         System.out.println("预订成功"+count[j]);
                         String roomid=count[j];
-                        Juser juser1=juserRepository.findByUsername(username);
+                        Juser juser1=juserRepository.findByUsername(username);//若到店预订表中不存在该用户，则新建。
                         if(juser1==null){
                             Juser juser=new Juser();
                             juser.setCard(card);
                             juser.setUsername(username);
+                            juser.setSex(sex);
+                            juser.setPhone(phone);
                             juserRepository.save(juser);
                         }
                         RoomAdmin roomAdmin2=new RoomAdmin();
@@ -183,6 +185,19 @@ public class reserveController {
                         roomAdmin2.setType(type);
                         roomAdmin2.setRoomid(roomid);
                         roomAdminRepository.save(roomAdmin2);
+                        History history=new History();
+                        history.setCard(card);
+                        history.setInday(inday2);
+                        history.setMoney(money);
+                        history.setNumber(number);
+                        history.setOutday(outday2);
+                        history.setPhone(phone);
+                        history.setRoomid(roomid);
+                        history.setSex(sex);
+                        history.setSoutday(soutday);
+                        history.setUsername(username);
+                        history.setType(type);
+                        historyRepository.save(history);
                         break;
 
                     }
@@ -205,6 +220,7 @@ public class reserveController {
         mv.setViewName("redirect:/roomadmins/roomadmin");
         return mv;
     }
+    //用户自行预订，成功后加入Order表中
     @RequestMapping("/qyuding")
     public ModelAndView qreserve(HttpServletRequest request){
         String username=request.getParameter("username");
@@ -309,17 +325,33 @@ public class reserveController {
             if(kk==0){
                 System.out.println("预订成功"+count[j]);
                 String roomid=count[j];
-                RoomAdmin roomAdmin2=new RoomAdmin();
-                roomAdmin2.setCard(card);
-                roomAdmin2.setUsername(username);
-                roomAdmin2.setInday(inday2);
-                roomAdmin2.setSoutday(soutday);
-                roomAdmin2.setOutday(outday2);
-                roomAdmin2.setMoney(money);
-                roomAdmin2.setNumber(number);
-                roomAdmin2.setType(type);
-                roomAdmin2.setRoomid(roomid);
-                roomAdminRepository.save(roomAdmin2);
+                Order order=new Order();
+                order.setCard(card);
+                order.setUsername(username);
+                order.setInday(inday2);
+                order.setSoutday(soutday);
+                order.setOutday(outday2);
+                order.setMoney(money);
+                order.setNumber(number);
+                order.setType(type);
+                order.setRoomid(roomid);
+                orderRepository.save(order);
+                User user1=userRepository.findByUsername(username);
+                String phone=user1.getPhone();
+                String sex=user1.getSex();
+               /* History history=new History();
+                history.setCard(card);
+                history.setInday(inday2);
+                history.setMoney(money);
+                history.setNumber(number);
+                history.setOutday(outday2);
+                history.setPhone(phone);
+                history.setRoomid(roomid);
+                history.setSex(sex);
+                history.setSoutday(soutday);
+                history.setUsername(username);
+                history.setType(type);
+                historyRepository.save(history);*/
                 break;
 
             }

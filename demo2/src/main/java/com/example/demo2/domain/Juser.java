@@ -9,7 +9,9 @@ public class Juser {
     @Id
     @GeneratedValue
    private Long id;
-   private String username;
+   private String sex;
+   private String phone;
+    private String username;
    private String card;
 
     public Long getId() {
@@ -34,5 +36,20 @@ public class Juser {
 
     public void setCard(String card) {
         this.card = card;
+    }
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

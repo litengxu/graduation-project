@@ -46,7 +46,7 @@
 		    	<div class="user-left">
 		    		<a id="user-left1"th:href="@{'/quser/xiugai/'+${session.username}}">编辑个人资料</a>
 		    		<a id="user-left2" href="/quser/upload">照片</a>
-		    		<a id="user-left3">信任与验证</a>
+		    		<a id="user-left3" href="/con/delCookie">安全退出</a>
 		    		<a id="user-left4">评价</a>
 		    	</div>
 		    	<div class="user-right">
@@ -56,7 +56,7 @@
 				        <ul class="left-form" >
 				              <h2>修改信息:</h2>
 				            <li >
-				                <input type="text" id="username"  name="username"  placeholder="Username"th:value="${session.username}" required/>
+				                <input type="text" id="username"  name="username" readonly="readonly"  placeholder="Username"th:value="${session.username}" required/>
 
 				                <div class="clear"> </div>
 				            </li>
@@ -131,5 +131,30 @@
                 }
             });
         }
+        layui.use(['util', 'laydate', 'layer'], function(){
+            var util = layui.util
+                ,laydate = layui.laydate
+                ,layer = layui.layer;
+            //固定块
+            util.fixbar({
+                bar1: true
+                ,bar2: false
+                ,css: {right: 50, bottom: 100}
+                ,bgcolor: '#393D49'
+                ,click: function(type){
+                    if(type === 'bar1'){
+                        window.location.href="/map/baidu";
+                    } else if(type === 'bar2') {
+                        layer.msg('两个bar都可以设定是否开启')
+                    }
+                }
+            });
+
+
+
+
+
+        });
+
 	</script>
 </html>

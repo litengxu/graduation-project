@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Hotel后台管理</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body class="layui-layout-body">
+<style type="text/css">
+
+    @import "../css/style.css";
+
+
+</style>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <!--    <li class="layui-nav-item"><a href="">控制台</a></li>
+                <li class="layui-nav-item"><a href="">商品管理</a></li>-->
+            <li class="layui-nav-item"><a href="/users/admin">用户</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="/adminsmes/mes">
+                    <img th:src="${session.user.getIcon()}" class="layui-nav-img"> 管理
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="/adminsmes/mes">基本资料</a></dd>
+                    <dd><a href="/con/delCookie">安全退出</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href=""></a></li>
+        </ul>
+    </div>
+
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <!--<a class="" href="javascript:;">所有商品</a>-->
+                    <!--<dl class="layui-nav-child">-->
+                    <!--<dd><a href="/users/admin">列表一</a></dd>-->
+                    <!--<dd><a href="javascript:;">列表二</a></dd>-->
+                    <!--<dd><a href="javascript:;">列表三</a></dd>-->
+                    <!--<dd><a href="">超链接</a></dd>-->
+                    <!--</dl>-->
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/roomadmins/roomadmin">住房管理</a>
+
+                </li>
+                <li class="layui-nav-item"><a href="/users/admin">住客信息</a></li>
+                <li class="layui-nav-item"><a href="/room/list">房间信息</a></li>
+                <li class="layui-nav-item"><a href="/reserveroom/reserve">预订房间</a></li>
+                <li class="layui-nav-item"><a href="/history/historylist">历史信息</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 3px;">
+
+            <div class="container">
+                <div class="row">
+
+                    <h2 th:text="${title}"></h2>
+
+                </div>
+                <!-- /.row -->
+
+
+
+
+                <div class="row">
+
+                    <form  method="post" th:object="${history}" action="/history/fresh">
+
+                        <div class="center">
+                            <ul class="left-form">
+                                <h2>住客信息:</h2>
+                                <h2>ID:</h2>
+                                <li>
+                                    <input type="hidden" id="id"  name="id"  placeholder="type" th:value="*{id}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>用户名：</h2>
+                                <li>
+                                    <input type="text" id="username"  name="username"  placeholder="username"  readonly="readonly" th:value="*{username}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>性别：</h2>
+                                <li>
+                                    <input type="text" id="sex"  name="sex"  placeholder="sex" th:value="*{sex}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>联系方式：</h2>
+                                <li>
+                                    <input type="text" id="phone"  name="phone"  placeholder="phone" th:value="*{phone}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>证件号：</h2>
+                                <li>
+                                    <input type="text" id="card"  name="card"  placeholder="card" th:value="*{card}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>类型：</h2>
+                                <li>
+                                    <input type="text" id="type"  name="type"  placeholder="type"  readonly="readonly" th:value="*{type}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>入住时间：</h2>
+                                <li>
+                                    <input type="text" id="inday"  name="inday"  placeholder="inday" readonly="readonly" th:value="*{inday}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>离开时间：</h2>
+                                <li>
+                                    <input type="text" id="outday"  name="outday"  placeholder="outday"  readonly="readonly"th:value="*{outday}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>实际离开时间：</h2>
+                                <li>
+                                    <input type="text" id="soutday"  name="soutday"  placeholder="soutday" th:value="*{soutday}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>入住人数：</h2>
+                                <li>
+                                    <input type="text" id="number"  name="number"  placeholder="number" th:value="*{number}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>金额：</h2>
+                                <li>
+                                    <input type="text" id="money"  name="money"  placeholder="money" th:value="*{money}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+                                <h2>入住房间号：</h2>
+                                <li>
+                                    <input type="text" id="roomid"  name="roomid"  placeholder="roomid"  readonly="readonly" th:value="*{roomid}" required/>
+
+                                    <div class="clear"> </div>
+                                </li>
+
+                                <input type="submit" onClick="myFunction()" value="修改">
+                                <div class="clear"> </div>
+
+                            </ul>
+                        </div>
+                        <div class="clear"> </div>
+
+                    </form>
+                </div>
+                <!-- /.row -->
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        ©后台管理-By:litengxu
+
+    </div>
+
+</div>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script src="/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>
+</html>
